@@ -21,6 +21,39 @@ body {
   color: var(--text);
   line-height: 1.5;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.moon-bg {
+  min-height: 100vh;
+  background:
+    /* stars */
+    radial-gradient(1px 1px at 15% 25%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.5), transparent),
+    /* lunar surface → space */
+    linear-gradient(
+      to top,
+      #6e7177 0%,   /* moon dust */
+      #4f545a 15%,  /* regolith shadow */
+      #2e3338 30%,  /* horizon falloff */
+      #14171a 50%,  /* near-space */
+      #050608 75%,  /* deep space */
+      #000000 100%
+    );
+  background-repeat: repeat;
+  background-size:
+    300px 300px,
+    400px 400px,
+    500px 500px,
+    600px 600px,
+    cover;
+  background-attachment: fixed;
+  background-color: #000;
+  color: #fff;
+}
 a, a:visited {color:orange;}
 .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
 .site-header, .site-footer { padding: 1rem; background: var(--panel); border-bottom: 1px solid var(--border); }
