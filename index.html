@@ -1,27 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-      <!-- Redirect (JS + non-JS fallback) -->
-  <script>
+    <!-- Redirect (JS + non-JS fallback) -->
+    <script>
     (function () {
-      // Change this later:
-      var TARGET_HOST = "www.ausgovinfo.com";
+        var TARGET = "https://www.ausgovinfo.com/";
 
-      // Only redirect when we're NOT already on the target domain.
-      // This prevents redirect loops once your real domain is serving this page.
-      if (window.location.hostname !== TARGET_HOST) {
-        var targetUrl =
-          window.location.protocol + "//" +
-          TARGET_HOST +
-          window.location.pathname +
-          window.location.search +
-          window.location.hash;
-
-        // replace() avoids adding the old URL to browser history
-        window.location.replace(targetUrl);
-      }
+        // Prevent redirect loop if already on the correct domain
+        if (window.location.origin !== TARGET.replace(/\/$/, "")) {
+        window.location.replace(TARGET);
+        }
     })();
-  </script>
+    </script>
   <noscript>
     <!-- Non-JS fallback -->
     <meta http-equiv="refresh" content="0; url=https://www.ausgovinfo.com">
